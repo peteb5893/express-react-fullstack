@@ -12,17 +12,28 @@ const TaskDetail = ({
   setTaskGroup,
   setTaskName,
 }) => (
-  <div>
+  <div className="card p-3 col-6">
     <div>
-      <input onChange={setTaskName} value={task.name} />
+      <input
+        onChange={setTaskName}
+        value={task.name}
+        className="form-control form-control-lg"
+      />
     </div>
     <div>
-      <button onClick={() => setTaskCompletion(id, !isComplete)}>
+      <button
+        className="btn btn-primary mt-2"
+        onClick={() => setTaskCompletion(id, !isComplete)}
+      >
         {isComplete ? "Reopen" : "Complete"}
       </button>
     </div>
     <div>
-      <select onChange={setTaskGroup} value={task.group}>
+      <select
+        onChange={setTaskGroup}
+        value={task.group}
+        className="form-control mt-2"
+      >
         {groups.map((group) => (
           <option key={group.id} value={group.id}>
             {group.name}
@@ -32,7 +43,7 @@ const TaskDetail = ({
     </div>
     <div>
       <Link to="/dashboard">
-        <button>Done</button>
+        <button className="btn btn-primary mt-2">Done</button>
       </Link>
     </div>
   </div>
